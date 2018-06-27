@@ -1,0 +1,2 @@
+# wc-catalog
+Catalog service
