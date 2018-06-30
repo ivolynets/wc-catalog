@@ -1,0 +1,16 @@
+language: go
+
+go:
+  - "1.10.x"
+
+before_install:
+  - go get -u github.com/golang/lint/golint
+
+stages:
+  - build
+  - test
+
+jobs:
+  include:
+    - stage: build
+      script: make
