@@ -1,0 +1,27 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  namespace: widecart
+  name: catalog
+  labels:
+    app: catalog
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: catalog
+  template:
+    metadata:
+      labels:
+        app: catalog
+    spec:
+      containers:
+      - name: catalog-service
+        image: ivolynets/wc-catalog-service:snapshot
+        ports:
+        - protocol: TCP
+          port: 8080
+          containerPort: 8080
+        resources:
+          limits:
+            cpu: 0.1

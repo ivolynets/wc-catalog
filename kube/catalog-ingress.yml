@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: widecart
+  name: catalog
+spec:
+  rules:
+  - host: catalog.widecart.loc
+    http:
+      paths:
+      - backend:
+          serviceName: catalog
+          servicePort: 8080
